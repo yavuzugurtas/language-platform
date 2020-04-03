@@ -1,34 +1,13 @@
-
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <div>Language Platform</div>
-          <p>
-            {this.state.wow}
-          </p>
-        </header>
-      </div>
-    )
-  }
-
-  state = {
-    wow: ''
-  };
-
-  componentDidMount() {
-    fetch('./api')
-      .then(res => res.json())
-      .then(parsed => {
-        this.setState({ wow: parsed.wow })
-      })
-      .catch(err => console.log(err));
-  }
+function App() {
+  return (
+    <div>
+      <h2>Welcome to Language Platform!</h2>
+      <h3>hello world</h3>
+    </div>
+  );
 }
-
 
 export default App;
