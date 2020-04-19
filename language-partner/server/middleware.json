@@ -1,0 +1,36 @@
+{
+  "initial:before": {
+  },
+  "initial": {"./middleware/tracker": {}
+  },
+  "session": {},
+  "auth": {},
+  "parse": {},
+  "routes": {
+    "loopback#rest": {
+      "paths": [
+        "${restApiRoot}"
+      ]
+    }
+  },
+  "files": {
+    "loopback#static": {
+        "name": "client",
+        "paths": ["/client"],
+        "params": "$!../client"
+    }
+},
+  "final": {
+    "loopback#urlNotFound": {},
+    "./middleware/log-error": {}
+  },
+  "final:after": {
+    "strong-error-handler": {
+      "params": {
+        "debug": false,
+        "log": true
+      }
+    }
+
+  }
+}
